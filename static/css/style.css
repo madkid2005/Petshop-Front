@@ -1,10 +1,12 @@
 /* FONT VAZIR ALL HTML */
 @font-face {
-    font-family: "Vazir";
-    src: url(./vazir.ttf);
+    font-family: 'Vazir';
+    src: url('/static/fonts/vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 body{
-    font-family: "Vazir";
+    font-family: 'Vazir';
     color: #444;
     background: #fafafa;
     
@@ -14,6 +16,50 @@ a{
 }
 
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 2s; /* انیمیشن بعد از 2 ثانیه شروع می‌شود */
+}
+
+.logo {
+    width: 500px;
+    height: auto;
+}
+.rgb-text {
+    font-size: 3em;
+    font-weight: bold;
+    animation: rgbAnimation 3s infinite;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 400%;
+}
+
+@keyframes rgbAnimation {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 /* INPUT SEARCH IN NAVBAR */
 .bg-search{
     background-color: rgb(240 240 240)
@@ -52,255 +98,46 @@ body.focused #search-suggestions {
     display: block;
 }
 /* NAVBAR PAIIN HOVER */
-.menu-item {
-    position: relative;
+
+.subsubmenu{
+    display: none;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    width: 200px;
+
 }
+.submenu{
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    width: 200px;
+}
+
+.menu-item:hover > .submenu,
+.submenu-item:hover > .subsubmenu {
+    display: block;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu > .menu-item {
+    float: left;
+    margin-right: 20px;
+}
+
 .submenu, .subsubmenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.submenu, .subsubmenu1 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-.submenu, .subsubmenu2 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu3 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu4 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu5 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu6 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu7 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu8 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu9 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu10 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu11 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.menu-item:hover .submenu {
-    display: block;
-}
-.submenu-item {
-    position: relative;
-}
-.submenu-item .subsubmenu {
-    display: block;
-    top: 0;
-    right: 100%;
-}
-
-.submenu-item:hover .subsubmenu1 {
-    display: block;
-    top: -100%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu2 {
-    display: block;
-    top: -200%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu3 {
-    display: block;
-    top: -300%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu4 {
-    display: block;
-    top: -400%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu5 {
-    display: block;
-    top: -500%;
-    right: 100%;
-}
-
-.submenu-item:hover .subsubmenu6 {
-    display: block;
-    top: -600%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu7 {
-    display: block;
-    top: -700%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu8 {
-    display: block;
-    top: -800%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu9 {
-    display: block;
-    top: -900%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu10 {
-    display: block;
-    top: -1000%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu11 {
-    display: block;
-    top: -1100%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu12 {
-    display: block;
-    top: -1200%;
-    right: 100%;
-}
-.submenu-item, .subsubmenu-item {
-    padding: 10px;
-    cursor: pointer;
-}
-.submenu-item:hover, .subsubmenu-item:hover {
-    background: #f0f0f0;
-}
 /* DOG & CAT  */
 .bg-Cat{
     background: linear-gradient(65deg,#ff3333,#F84F55);
@@ -361,6 +198,7 @@ body.focused #search-suggestions {
 .product-image {
     width: 100%;
     height: auto;
+    max-height: 400px
   }
   .product-details {
     text-align: center;
@@ -595,4 +433,98 @@ color: white;
 
 .bg-age6:hover{
     border: 2px solid #198754;
+}
+
+
+.owl-carousel .item img {
+    width: 100%; /* عرض تصویر به اندازه کامل باکس */
+    height: auto; /* حفظ نسبت تصویر */
+    max-height: 300px; /* حداکثر ارتفاع تصویر */
+}
+
+
+/* border ZEmanat */
+.animated-box-orenge {
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #ff6600 ;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.animated-box-orenge:hover {
+    background-color: #ff6600;
+    animation: shake 0.3s ease-in-out;
+    animation-iteration-count: 1;
+    color: #ffffff;
+
+}
+
+
+.animated-box-green {
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #66ff00 ;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.animated-box-green:hover {
+    background-color: #66ff00;
+    animation: shake 0.3s ease-in-out;
+    animation-iteration-count: 1;
+    color: #ffffff;
+
+}
+
+
+.animated-box-red {
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #ff0000 ;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.animated-box-red:hover {
+    background-color: #ff0000;
+    animation: shake 0.3s ease-in-out;
+    animation-iteration-count: 1;
+    color: #ffffff;
+
+}
+
+
+.animated-box-blue {
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #00fff2 ;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.animated-box-blue:hover {
+    background-color: #00fff2;
+    animation: shake 0.3s ease-in-out;
+    animation-iteration-count: 1;
+    color: #ffffff;
+
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
 }

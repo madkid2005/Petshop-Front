@@ -1,19 +1,39 @@
 from django.db import models
 
-#category of products
-class Category(models.Model):
-    name = models.CharField(max_length=255, verbose_name='نام')
-    description = models.TextField(blank = True)
-        
+# animal type 
+class AnimalType(models.Model):
+    name = models.CharField(max_length=100)
+
     def __str__(self):
-        return self.name 
+        return self.name
+
+
+#category of products
+class MainCategory(models.Model):
+    name = models.CharField(max_length=100)
+    animal_type = models.ForeignKey(AnimalType, related_name='main_categories', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+    
+
         
-        
-#product class         
+# SubCategories
+class SubCategory(models.Model):
+    name = models.CharField(max_length=100)
+    main_category = models.ForeignKey(MainCategory, related_name='sub_categories', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+    
+# product class         
 class Product(models.Model):
     
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE,  verbose_name='دسته‌بندی')
+    sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=255, verbose_name='نام')
+    name_in_list = models.CharField(max_length=255, verbose_name=' نام داخل لیست', default='name')
     description = models.TextField(blank=True, verbose_name='توضیحات')
     price = models.DecimalField(max_digits=10, decimal_places=0, verbose_name='قیمت')
     stock = models.PositiveIntegerField(verbose_name='موجودی') 
@@ -35,7 +55,8 @@ class Product(models.Model):
     tags = models.ManyToManyField('Tag', blank=True, verbose_name='برچسب ها برای جستجو و فیلتر')
     is_featured = models.BooleanField(default=False, verbose_name='تخفیف')
     featured_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='قیمت تخفیف خورده')
-    
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
+
     
     
 # product images 

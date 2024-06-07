@@ -1,0 +1,438 @@
+{% extends "products/base.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}Products{% endblock %}
+
+{% block style %}
+<style>
+    .zoom-effect-container {
+        position: relative;
+        overflow: hidden;
+    }
+    .zoom-effect-container img {
+        transform: scale(1.6);
+        transition: transform 0.5s ease;
+    }
+    .zoom-effect-container:hover img {
+        transform: scale(2.9);
+    }
+    
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="logo-container d-grid">
+    <img src="{% static 'img/giphy.webp' %}" alt="Logo" class="logo d-none d-lg-block">
+    <h1 class="d-flex justify-content-center rgb-text">Pet Shop</h1>
+</div>
+
+
+<!-- BANNER SLIDER  -->
+<section>
+    <div class="container-fluid mt-1">
+        <div class="row">
+            <div class="col-12 ">
+                <div id="carouselExampleIndicators" class="carousel slide">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+
+                        <a href="">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/slider1.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="carousel-item">
+                                <img src="{% static 'img/slider2.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="carousel-item">
+                                <img src="{% static 'img/slider3.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon me-5" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon ms-5" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BANNER SLIDER End -->
+
+<!-- DOG & CAT -->
+<div class="container-fluid bg-white mt-5">
+    <div class="row ">
+
+        <div class="col-12 col-md-6  position-relative UP ">
+            <a href="">
+                <div class="">
+                    <img  class="img-fluid UP" src="{% static 'img/catproducts.jpg' %}" alt="">
+                </div>               
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 DOWN position-relative ">
+            <a href="">
+                <div class=" ">
+                    <img class="img-fluid"  src="{% static 'img/dogproducts.jpg' %}" alt="">
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+<!-- DOG & CAT End-->
+
+<!-- Products box by them Subcategory name -->
+<div class="container mt-5">
+         <h1>غذا گربه</h1>
+
+            <div class="mx-4">
+                <p class="fw-bold">dddddddddddddd</p>
+            </div>
+
+            <div class="container mt-1">
+                <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
+                        <div class="item rounded-4">
+                                    <div class="zoom-effect-container">
+                                        <img src="{% static 'img/royalcanin.jpg' %}" alt="{{ product.name }}" class="img-fluid mt-1">
+                                    </div>
+                            <div class="product-details flex-grow-1 d-flex flex-column justify-content-between">
+                                <div class="product-name">
+                                    <small><small><small>غذا گربه خشگ</small></small></small>
+                                </div>
+                            </div>
+                            <button class="btn btn-success mt-auto">
+                                <small><small>9000000 تومان</small></small> 
+                            </button>
+                        </div>
+                </div>
+            </div>
+
+            
+</div>
+
+
+<div class="container mt-5">
+    <h1>غذا گربه</h1>
+
+       <div class="mx-4">
+           <p class="fw-bold">dddddddddddddd</p>
+       </div>
+
+       <div class="container mt-1">
+           <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
+                   <div class="item rounded-4">
+                               <div class="zoom-effect-container">
+                                   <img src="{% static 'img/royalcanin.jpg' %}" alt="{{ product.name }}" class="img-fluid mt-1">
+                               </div>
+                       <div class="product-details flex-grow-1 d-flex flex-column justify-content-between">
+                           <div class="product-name">
+                               <small><small><small>غذا گربه خشگ</small></small></small>
+                           </div>
+                       </div>
+                       <button class="btn btn-success mt-auto">
+                           <small><small>9000000 تومان</small></small> 
+                       </button>
+                   </div>
+           </div>
+       </div>
+
+       
+</div>
+
+
+
+<!-- 2 RED ROYALCANIN DOG-CAT -->
+<div class="container-fluid bg-white mt-5">
+    <div class="row ">
+
+        <div class="col-12 col-md-6  position-relative UP ">
+            <a href="">
+                <div class="">
+                    <img  class="img-fluid UP" src="{% static 'bnnrimg/bnnr2.webp' %}" alt="">
+                </div>               
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 DOWN position-relative ">
+            <a href="">
+                <div class=" ">
+                    <img class="img-fluid"  src="{% static 'bnnrimg/bnnr3.webp' %}" alt="">
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- AGE & MONEY BOX  -->
+
+
+
+<div class="container-fluid  mt-5">
+
+    <div class="containers   row">
+      <div class="big-box col-12 col-md-5  mx-lg-2 text-center ">
+        <h4 class="text-center">بازه قیمت غذا</h4>
+        <div class="small-box-container border bg-white rounded-4 p-3 border-2  ">
+          <div class="small-box bg-age1 w-100 item p-2"><small>
+  
+            0 تا 500
+          </small>
+        </div>
+          <div class="small-box bg-age2 w-100 item p-2"><small>
+  
+            500 تا 
+          </small>
+        </div>
+          <div class="small-box bg-age3 w-100 item p-2"><small>
+  
+            1تا2 
+          </small>
+        </div>
+          <div class="small-box bg-age4 w-100 item p-2"><small>
+  
+            2تا4 
+          </small>
+        </div>
+          <div class="small-box bg-age5 w-100 item p-2"><small>
+  
+            4تا10 
+          </small>
+        </div>
+          <div class="small-box bg-age6 w-100 item p-2"><small>
+  
+            10 به بالا
+          </small>
+        </div>
+        </div>
+      </div>
+      <div class="big-box col-12 col-md-5  mx-lg-2 text-center   ">
+        <h4 class="text-center">بازه سنی غذا</h4>
+         
+        <div class="small-box-container border bg-white rounded-4 p-3 border-2  ">
+          <div class="small-box  bg-age1   item p-2">
+            <small>
+  
+              زیر 1 سال
+            </small>
+  
+          </div>
+            <div class="small-box bg-age2 item p-2">
+              <small>
+  
+                1تا 7
+              </small>
+              
+            </div>
+            <div class="small-box bg-age3 item p-2">
+              <small>
+  
+                7 به بالا
+              </small>
+  
+            </div>
+            <div class="small-box bg-age4 item p-2" >
+              <small>
+  
+                عقیم شده
+              </small>
+  
+            </div>
+            <div class="small-box  bg-age5 item p-2">
+              <small>
+  
+                مادر و بچه
+              </small>
+  
+            </div>
+            <div class="small-box bg-age6 item p-2">
+              <small>
+  
+                سالخورده
+              </small>
+              
+  
+            </div>
+          </div>
+        </div>
+  </div>
+  
+      </div>
+
+
+
+<div class="container mt-5">
+    <h1>غذا گربه</h1>
+
+       <div class="mx-4">
+           <p class="fw-bold">dddddddddddddd</p>
+       </div>
+
+       <div class="container mt-1">
+           <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
+                   <div class="item rounded-4">
+                               <div class="zoom-effect-container">
+                                   <img src="{% static 'img/royalcanin.jpg' %}" alt="{{ product.name }}" class="img-fluid mt-1">
+                               </div>
+                       <div class="product-details flex-grow-1 d-flex flex-column justify-content-between">
+                           <div class="product-name">
+                               <small><small><small>غذا گربه خشگ</small></small></small>
+                           </div>
+                       </div>
+                       <button class="btn btn-success mt-auto">
+                           <small><small>9000000 تومان</small></small> 
+                       </button>
+                   </div>
+           </div>
+       </div>
+
+       
+</div>
+
+
+<div class="container mt-5">
+    <h1>غذا گربه</h1>
+
+       <div class="mx-4">
+           <p class="fw-bold">dddddddddddddd</p>
+       </div>
+
+       <div class="container mt-1">
+           <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
+                   <div class="item rounded-4">
+                               <div class="zoom-effect-container">
+                                   <img src="{% static 'img/royalcanin.jpg' %}" alt="{{ product.name }}" class="img-fluid mt-1">
+                               </div>
+                       <div class="product-details flex-grow-1 d-flex flex-column justify-content-between">
+                           <div class="product-name">
+                               <small><small><small>غذا گربه خشگ</small></small></small>
+                           </div>
+                       </div>
+                       <button class="btn btn-success mt-auto">
+                           <small><small>9000000 تومان</small></small> 
+                       </button>
+                   </div>
+           </div>
+       </div>
+
+       
+</div>
+
+
+
+<section>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-12 ">
+                <div id="carouselExampleIndicators" class="carousel slide">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+
+                        <a href="">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/slider1.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="carousel-item">
+                                <img src="{% static 'img/slider2.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="carousel-item">
+                                <img src="{% static 'img/slider3.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon me-5" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon ms-5" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+      <div class="container mt-5">
+        <div class="row gx-5">
+            
+            <div class="col-12 col-lg-3 d-flex justify-content-center animated-box-orenge" >
+                   
+                   <i class="bi bi-truck h1 fw-bold me-4 mt-3"></i>
+                <div class="mt-2">
+                    <h4>ارسال رایگان</h4>
+                <p>برای اطلاع بیشتر کلیک کنید</p>
+                    </div>
+            </div>
+            <div class="col-12 col-lg-3 d-flex justify-content-center animated-box-green" >
+                   
+                <i class="bi bi-truck h1 fw-bold me-4 mt-3"></i>
+             <div class="mt-2">
+                 <h4>ارسال رایگان</h4>
+             <p>برای اطلاع بیشتر کلیک کنید</p>
+                 </div>
+         </div>
+         <div class="col-12 col-lg-3 d-flex justify-content-center animated-box-red" >
+                   
+            <i class="bi bi-truck h1 fw-bold me-4 mt-3"></i>
+         <div class="mt-2">
+             <h4>ارسال رایگان</h4>
+         <p>برای اطلاع بیشتر کلیک کنید</p>
+             </div>
+     </div>
+     <div class="col-12 col-lg-3 d-flex justify-content-center animated-box-blue" >
+                   
+        <i class="bi bi-truck h1 fw-bold me-4 mt-3"></i>
+     <div class="mt-2">
+         <h4>ارسال رایگان</h4>
+     <p>برای اطلاع بیشتر کلیک کنید</p>
+         </div>
+ </div>
+        </div>
+      </div>
+{% endblock %}
