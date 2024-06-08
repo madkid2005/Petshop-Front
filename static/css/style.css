@@ -1,7 +1,7 @@
 /* FONT VAZIR ALL HTML */
 @font-face {
     font-family: 'Vazir';
-    src: url('/static/fonts/vazir.ttf') format('truetype');
+    src: url('/static/css/fonts/vazir.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,50 +16,6 @@ a{
 }
 
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    animation: fadeOut 1s ease-in-out forwards;
-    animation-delay: 2s; /* انیمیشن بعد از 2 ثانیه شروع می‌شود */
-}
-
-.logo {
-    width: 500px;
-    height: auto;
-}
-.rgb-text {
-    font-size: 3em;
-    font-weight: bold;
-    animation: rgbAnimation 3s infinite;
-    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    color: transparent;
-    background-size: 400%;
-}
-
-@keyframes rgbAnimation {
-    0% {
-        background-position: 0%;
-    }
-    100% {
-        background-position: 100%;
-    }
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
 /* INPUT SEARCH IN NAVBAR */
 .bg-search{
     background-color: rgb(240 240 240)
@@ -99,17 +55,15 @@ body.focused #search-suggestions {
 }
 /* NAVBAR PAIIN HOVER */
 
-.subsubmenu{
-    display: none;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-
+.menu-item {
+    position: relative;
 }
-.submenu{
+
+.submenu, .subsubmenu {
     display: none;
     position: absolute;
+    top: 100%;
+    right: 0;
     background: white;
     border: 1px solid #ccc;
     z-index: 1000;
@@ -136,6 +90,11 @@ body.focused #search-suggestions {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+.submenu > .submenu-item,
+.subsubmenu > .subsubmenu-item {
+    position: relative;
 }
 
 /* DOG & CAT  */
@@ -440,91 +399,4 @@ color: white;
     width: 100%; /* عرض تصویر به اندازه کامل باکس */
     height: auto; /* حفظ نسبت تصویر */
     max-height: 300px; /* حداکثر ارتفاع تصویر */
-}
-
-
-/* border ZEmanat */
-.animated-box-orenge {
-    font-weight: bold;
-    color: #333;
-    background-color: #fff;
-    border: 2px solid #ff6600 ;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.animated-box-orenge:hover {
-    background-color: #ff6600;
-    animation: shake 0.3s ease-in-out;
-    animation-iteration-count: 1;
-    color: #ffffff;
-
-}
-
-
-.animated-box-green {
-    font-weight: bold;
-    color: #333;
-    background-color: #fff;
-    border: 2px solid #66ff00 ;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.animated-box-green:hover {
-    background-color: #66ff00;
-    animation: shake 0.3s ease-in-out;
-    animation-iteration-count: 1;
-    color: #ffffff;
-
-}
-
-
-.animated-box-red {
-    font-weight: bold;
-    color: #333;
-    background-color: #fff;
-    border: 2px solid #ff0000 ;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.animated-box-red:hover {
-    background-color: #ff0000;
-    animation: shake 0.3s ease-in-out;
-    animation-iteration-count: 1;
-    color: #ffffff;
-
-}
-
-
-.animated-box-blue {
-    font-weight: bold;
-    color: #333;
-    background-color: #fff;
-    border: 2px solid #00fff2 ;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.animated-box-blue:hover {
-    background-color: #00fff2;
-    animation: shake 0.3s ease-in-out;
-    animation-iteration-count: 1;
-    color: #ffffff;
-
-}
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-    75% {
-        transform: translateX(-5px);
-    }
 }
